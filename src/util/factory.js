@@ -145,7 +145,6 @@ const GoogleSheet = function (sheetReference, sheetName) {
   }
 
   self.init = function () {
-    plotLoading()
     return self
   }
 
@@ -174,7 +173,6 @@ const CSVDocument = function (url) {
   }
 
   self.init = function () {
-    plotLoading()
     return self
   }
 
@@ -198,39 +196,13 @@ const FileName = function (url) {
 }
 
 const GoogleSheetInput = function () {
+  url = "/assets/tech-radar.csv";
+  sheet = CSVDocument(url);
   var self = {}
-  var sheet
+  var sheet;
 
   self.build = function () {
-    var domainName = DomainName(window.location.search.substring(1))
-    var queryString = window.location.href.match(/sheetId(.*)/)
-    var queryParams = queryString ? QueryParams(queryString[0]) : {}
-
-    if (domainName && queryParams.sheetId.endsWith('csv')) {
-      sheet = CSVDocument(queryParams.sheetId)
-      sheet.init().build()
-    } else if (domainName && domainName.endsWith('google.com') && queryParams.sheetId) {
-      sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName)
-      console.log(queryParams.sheetName)
-
-      sheet.init().build()
-    } else {
-      var content = d3.select('body')
-        .append('div')
-        .attr('class', 'input-sheet')
-      setDocumentTitle()
-
-      plotLogo(content)
-
-      var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
-        ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/how-to-byor">Read this first.</a></p></div>'
-
-      plotBanner(content, bannerText)
-
-      plotForm(content)
-
-      plotFooter(content)
-    }
+    sheet.init().build();
   }
 
   return self
@@ -240,39 +212,10 @@ function setDocumentTitle () {
   document.title = 'Build your own Radar'
 }
 
-function plotLoading (content) {
-  content = d3.select('body')
-    .append('div')
-    .attr('class', 'loading')
-    .append('div')
-    .attr('class', 'input-sheet')
-
-  setDocumentTitle()
-
-  plotLogo(content)
-
-  var bannerText = '<h1>Building your radar...</h1><p>Your Technology Radar will be available in just a few seconds</p>'
-  plotBanner(content, bannerText)
-  plotFooter(content)
-}
-
 function plotLogo (content) {
   content.append('div')
     .attr('class', 'input-sheet__logo')
-    .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>')
-}
-
-function plotFooter (content) {
-  content
-    .append('div')
-    .attr('id', 'footer')
-    .append('div')
-    .attr('class', 'footer-content')
-    .append('p')
-    .html('Powered by <a href="https://www.thoughtworks.com"> Thoughtworks</a>. ' +
-      'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">Thoughtworks\' terms of use</a>. ' +
-      'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
-      'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
+    .html('<a href="https://www.globo.com"><img src="/images/logo_globo.png" / ></a>')
 }
 
 function plotBanner (content, text) {
@@ -315,14 +258,13 @@ function plotErrorMessage (exception) {
 
   plotLogo(content)
 
-  var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
-    ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/how-to-byor">Read this first.</a></p></div>'
+  var bannerText = '<div><h1>Build your own radar</h1></div>'
 
   plotBanner(content, bannerText)
 
   d3.selectAll('.loading').remove()
-  message = "Oops! We can't find the Google Sheet you've entered"
-  var faqMessage = 'Please check <a href="https://www.thoughtworks.com/radar/how-to-byor">FAQs</a> for possible solutions.'
+  message = "Oops! We can't process your CSV file. "
+
   if (exception instanceof MalformedDataError) {
     message = message.concat(exception.message)
   } else if (exception instanceof SheetNotFoundError) {
@@ -336,17 +278,6 @@ function plotErrorMessage (exception) {
     .attr('class', 'error-container__message')
   errorContainer.append('div').append('p')
     .html(message)
-  errorContainer.append('div').append('p')
-    .html(faqMessage)
-
-  var homePageURL = window.location.protocol + '//' + window.location.hostname
-  homePageURL += (window.location.port === '' ? '' : ':' + window.location.port)
-  var homePage = '<a href=' + homePageURL + '>GO BACK</a>'
-
-  errorContainer.append('div').append('p')
-    .html(homePage)
-
-  plotFooter(content)
 }
 
 function plotUnauthorizedErrorMessage () {
