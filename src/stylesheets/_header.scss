@@ -10,8 +10,8 @@ header {
   }
 
   .radar-title {
-    background-color: $grey-darkest;
-    padding: 30px 0;
+    background-color: $grey-lightgrey;
+    padding: 20px 0;
 
     display: table;
     margin: auto;
@@ -24,13 +24,14 @@ header {
 
       text-align: left;
       padding-left: 10%;
+      color: $white;
 
       h1 {
-        font-size: 55px;
+        font-size: 45px;
         font-weight: 900;
         letter-spacing: -.04em;
         line-height: 0.8em;
-        margin: 0;
+        margin: 3%;
         text-transform: uppercase;
       }
     }
@@ -39,7 +40,7 @@ header {
       flex: 0 0 30%;
       margin-left: auto;
 
-      width: 30%;
+      width: 33%;
       display: table-cell;
       vertical-align: middle;
 
@@ -49,7 +50,7 @@ header {
 
       img {
         vertical-align: middle;
-        width: 34%;
+        width: 15%;
       }
     }
   }
@@ -60,7 +61,17 @@ header {
     padding-left: 10%;
   }
 
-  .print-radar-btn, .search-box {
+ .search-radar {
+    border: 1px solid #aaa;
+    background-color: inherit;
+    background-image: url("/images/search-logo-2x.svg");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 35px;
+    width: 275px;
+  }
+
+ .search-box {
     margin-left: auto;
     margin-right: 10%;
   }
@@ -148,6 +159,8 @@ header {
 
   #alternative-buttons {
     margin-bottom: 50px;
+    padding-top: 2%;
+    margin-left: 30%;
 
     .highlight {
       border-bottom: none;
@@ -165,13 +178,6 @@ header {
       margin-right: 10px;
     }
 
-    .search-radar {
-      border: 1px solid #aaa;
-      background-color: inherit;
-      background-image: url("/images/search-logo-2x.svg");
-      background-repeat: no-repeat;
-      background-position: 10px;
-    }
 
     input {
       padding-left: 35px;

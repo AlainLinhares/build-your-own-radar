@@ -91,7 +91,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
       self.authenticate(false)
     })
 
-    function createBlips (__, tabletop) {
+    function createBlips(__, tabletop) {
       try {
         if (!sheetName) {
           sheetName = tabletop.foundSheetNames[0]
@@ -112,7 +112,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
     }
   }
 
-  function createBlipsForProtectedSheet (documentTitle, values, sheetNames) {
+  function createBlipsForProtectedSheet(documentTitle, values, sheetNames) {
     if (!sheetName) {
       sheetName = sheetNames[0]
     }
@@ -179,12 +179,6 @@ const CSVDocument = function (url) {
   return self
 }
 
-const DomainName = function (url) {
-  var search = /.+:\/\/([^\\/]+)/
-  var match = search.exec(decodeURIComponent(url.replace(/\+/g, ' ')))
-  return match == null ? null : match[1]
-}
-
 const FileName = function (url) {
   var search = /([^\\/]+)$/
   var match = search.exec(decodeURIComponent(url.replace(/\+/g, ' ')))
@@ -208,47 +202,23 @@ const GoogleSheetInput = function () {
   return self
 }
 
-function setDocumentTitle () {
+function setDocumentTitle() {
   document.title = 'Build your own Radar'
 }
 
-function plotLogo (content) {
+function plotLogo(content) {
   content.append('div')
     .attr('class', 'input-sheet__logo')
     .html('<a href="https://www.globo.com"><img src="/images/logo_globo.png" / ></a>')
 }
 
-function plotBanner (content, text) {
+function plotBanner(content, text) {
   content.append('div')
     .attr('class', 'input-sheet__banner')
     .html(text)
 }
 
-function plotForm (content) {
-  content.append('div')
-    .attr('class', 'input-sheet__form')
-    .append('p')
-    .html('<strong>Enter the URL of your <a href="https://www.thoughtworks.com/radar/how-to-byor" target="_blank">Google Sheet or CSV</a> file below…</strong>')
-
-  var form = content.select('.input-sheet__form').append('form')
-    .attr('method', 'get')
-
-  form.append('input')
-    .attr('type', 'text')
-    .attr('name', 'sheetId')
-    .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV file')
-    .attr('required', '')
-
-  form.append('button')
-    .attr('type', 'submit')
-    .append('a')
-    .attr('class', 'button')
-    .text('Build my radar')
-
-  form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>")
-}
-
-function plotErrorMessage (exception) {
+function plotErrorMessage(exception) {
   var message = 'Oops! It seems like there are some problems with loading your data. '
 
   var content = d3.select('body')
@@ -280,7 +250,7 @@ function plotErrorMessage (exception) {
     .html(message)
 }
 
-function plotUnauthorizedErrorMessage () {
+function plotUnauthorizedErrorMessage() {
   var content = d3.select('body')
     .append('div')
     .attr('class', 'input-sheet')
