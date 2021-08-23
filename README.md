@@ -10,13 +10,12 @@ Esse radar é gerado através da formatação, inserção e estruturação de um
 
 O formato esperado é o seguinte:
 
-```
-name,ring,quadrant,isNew,description  
-Composer,adopt,tools,TRUE,"Although the idea of dependency management ..."  
-Canary builds,trial,techniques,FALSE,"Many projects have external code dependencies ..."  
-Apache Kylin,assess,platforms,TRUE,"Apache Kylin is an open source analytics solution ..."  
-JSF,hold,languages & frameworks,FALSE,"We continue to see teams run into trouble using JSF ..."  
-```
+| name          | ring   | quadrant               | isNew | description                                             |
+|---------------|--------|------------------------|-------|---------------------------------------------------------|
+| Composer      | adopt  | tools                  | TRUE  | Although the idea of dependency management ...          |
+| Canary builds | trial  | techniques             | FALSE | Many projects have external code dependencies ...       |
+| Apache Kylin  | assess | platforms              | TRUE  | Apache Kylin is an open source analytics solution ...   |
+| JSF           | hold   | languages & frameworks | FALSE | We continue to see teams run into trouble using JSF ... |
 
 Caso a formatação não seja obedecida o serviço irá mostrar uma tela de erro indicando falhas no processo de carregamento. 
 
@@ -31,6 +30,10 @@ Durante o processo de inserção de dados, será muito comum que alterações de
   - Alain Linhares (alain.linhares@thoughtworks.com)
   - Guilherme Silveira (guilherme.silveira@thoughtworks.com)
   - Weberton Rafael Silva (weberton.silva@thoughtworks.com)
+
+Porém, fora esses pessoas ainda tiveram ainda os que contribuiram no desenvolvimento da biblioteca principalmente. É possível ver os outros nomes no arquivo CONTRIBUTORS.md
+
+
 
 
 
