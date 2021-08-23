@@ -6,6 +6,8 @@ Essa biblioteca é responsável por gerar um serviço responsável por renderiza
 
 ## Carregar Radar
 
+Antes de mencionar sobre como carregar um radar na bibloteca, faz-se necessário informar sobre o arquivo *IntegratioGuide.md* que é o guia que orienta o passo a passo para funcionamento e configuração do serviço da biblioteca.
+
 Esse radar é gerado através da formatação, inserção e estruturação de um arquivo csv que exista na estrutura interna de pastas do proejto. Esse arquivo é chamado de *tech-radar.csv*, que está no seguinte caminho: *dist/assets*.
 
 O formato esperado é o seguinte:
@@ -31,7 +33,7 @@ Durante o processo de inserção de dados, será muito comum que alterações de
   - Guilherme Silveira (guilherme.silveira@thoughtworks.com)
   - Weberton Rafael Silva (weberton.silva@thoughtworks.com)
 
-Porém, fora esses pessoas ainda tiveram ainda os que contribuiram no desenvolvimento da biblioteca principalmente. É possível ver os outros nomes no arquivo CONTRIBUTORS.md
+Porém, fora esses pessoas ainda tiveram ainda os que contribuiram no desenvolvimento da biblioteca principalmente. É possível ver os outros nomes no arquivo *CONTRIBUTORS.md*
 
 
 
