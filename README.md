@@ -1,6 +1,6 @@
 ## Build-your-own-radar
 
-Biblioteca que gera um radar interativo, inspirado em [thoughtworks.com/radar](https://www.thoughtworks.com/radar). Foi extendida, adaptada e ajustada para o contexto da Globo, usando como referência o seguinte [repositório](https://github.com/thoughtworks/build-your-own-radar).
+Biblioteca que gera um radar interativo, inspirado em [thoughtworks.com/radar](https://www.thoughtworks.com/radar). Foi extendida, adaptada e ajustada usando como referência o seguinte [repositório](https://github.com/thoughtworks/build-your-own-radar).
 
 Essa biblioteca é responsável por gerar um serviço responsável por renderizar as informações de um radar no navegador através de componentes e bibliotecas visuais.
 
