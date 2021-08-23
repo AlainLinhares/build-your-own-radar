@@ -33,7 +33,7 @@ Durante o processo de inserção de dados, será muito comum que alterações de
   - Guilherme Silveira (guilherme.silveira@thoughtworks.com)
   - Weberton Rafael Silva (weberton.silva@thoughtworks.com)
 
-Porém, fora esses pessoas ainda tiveram ainda os que contribuiram no desenvolvimento da biblioteca principalmente. É possível ver os outros nomes no arquivo [*CONTRIBUTORS.md*] (https://github.com/AlainLinhares/build-your-own-radar/blob/tech-radar-adapted/CONTRIBUTORS.md)
+Porém, fora esses pessoas ainda tiveram ainda os que contribuiram no desenvolvimento da biblioteca principalmente. É possível ver os outros nomes no arquivo [*CONTRIBUTORS.md*](https://github.com/AlainLinhares/build-your-own-radar/blob/tech-radar-adapted/CONTRIBUTORS.md)
 
 
 
