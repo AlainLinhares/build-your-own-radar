@@ -127,8 +127,3 @@ npm install && npm rebuild node-sass && npm run dev
 ```
 
 After building it will start on `localhost:8080`
-
-### About changes to Radar content
-
-***Note***: In the project's internal folder structure, there is a file called *tech-radar.csv*. Which is in the following path: *dist/assets*.
-When there is a need to make any changes, whether in structure or information. It will be necessary to change the file, upload it to the server from a branch and open PR for the main branch.
