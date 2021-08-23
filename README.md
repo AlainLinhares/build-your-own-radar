@@ -6,7 +6,7 @@ Essa biblioteca é responsável por gerar um serviço responsável por renderiza
 
 ## Carregar Radar
 
-Antes de mencionar sobre como carregar um radar na bibloteca, faz-se necessário informar sobre o arquivo [*IntegratioGuide.md*](https://github.com/AlainLinhares/build-your-own-radar/blob/tech-radar-adapted/IntegrationGuide.md) que é o guia que orienta o passo a passo para funcionamento e configuração do serviço da biblioteca.
+Antes de mencionar sobre como carregar um radar na bibloteca, faz-se necessário informar sobre o arquivo [*IntegrationGuide.md*](https://github.com/AlainLinhares/build-your-own-radar/blob/tech-radar-adapted/IntegrationGuide.md) que é o guia que orienta o passo a passo para funcionamento e configuração do serviço da biblioteca.
 
 Esse radar é gerado através da formatação, inserção e estruturação de um arquivo csv que exista na estrutura interna de pastas do proejto. Esse arquivo é chamado de *tech-radar.csv*, que está no seguinte caminho: *dist/assets*.
 
