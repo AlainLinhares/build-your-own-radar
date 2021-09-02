@@ -155,11 +155,13 @@ const CSVDocument = function (url) {
   var self = {}
 
   self.build = function () {
-    d3.csv(url).then(createBlips)
+    d3.text(url).then(createBlips)
   }
 
-  var createBlips = function (data) {
+  var createBlips = function (text) {
     try {
+      var dsv = d3.dsvFormat(";");
+      var data = dsv.parse(text);
       var columnNames = data.columns
       delete data.columns
       var contentValidator = new ContentValidator(columnNames)
